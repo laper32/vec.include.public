@@ -60,9 +60,9 @@ native void ToolsSetAddonBits(int entity, int val);
 
 native int ToolsGetHitGroup(int entity);
 
-inline int ToolsGetScore(int entity, bool score = true) { return (score) ? (ToolsGetFrags(entity)) : (ToolsGetDeaths(entity)); }
+native int ToolsGetScore(int entity, bool score = true);
 
-inline void ToolsSetScore(int entity, bool score = true, int val) { (score) ? (ToolsSetFrags(entity, val)) : (ToolsSetDeaths(entity, val)); }
+inline void ToolsSetScore(int entity, int val, bool score = true);
 
 native int ToolsGetFrags(int entity);
 native void ToolsSetFrags(int entity, int val);
