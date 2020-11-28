@@ -4,6 +4,8 @@
 
 #define _vec_std_included
 
+#define inline stock
+
 native void ToolsSetVelocity(int entity, float velocity[3]);
 
 native void ToolsGetVelocity(int entity, float velocity[3], bool apply = true, bool stack = true);
@@ -57,6 +59,10 @@ native void ToolsSetAddonBits(int entity, int val);
 //ToolsGetObserverTarget
 
 native int ToolsGetHitGroup(int entity);
+
+inline int ToolsGetScore(int entity, bool score = true) { return (score) ? (ToolsGetFrags(entity)) : (ToolsGetDeaths(entity)); }
+
+inline void ToolsSetScore(int entity, bool score = true, int val) { (score) ? (ToolsSetFrags(entity, val)) : (ToolsSetDeaths(entity, val)); }
 
 native int ToolsGetFrags(int entity);
 native void ToolsSetFrags(int entity, int val);
